@@ -30,7 +30,7 @@ def codegenerator(code):
        #Given code is SHA256 Encrypted before generating the QR
        encodedcode=hashlib.sha256(code.encode())
        qrcode=pyqrcode.create(str(encodedcode.hexdigest()))
-       qrcode.png('/static/uca-colors.png', scale=6,module_color=[0, 0, 0, 128])
+       qrcode.png('static/uca-colors.png', scale=6,module_color=[0, 0, 0, 128])
        # the code and its corresponding hash value is added to database
        print(str(encodedcode.hexdigest()))
        addtodb(code,str(encodedcode.hexdigest()))
